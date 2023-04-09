@@ -1,0 +1,44 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"label": "rm",
+			"command": "rm -rf ${workspaceFolder}/../build/*",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": [],
+			"detail": "CMake template build task"
+		},
+		{
+			"type": "shell",
+			"label": "build",
+			"command": "cd ${workspaceFolder}/../build/ && /usr/local/cmake/bin/cmake -DUSE_MPI=ON -DCMAKE_INSTALL_PREFIX=./kokkos/ -DCMAKE_BUILD_TYPE=Debug ..", //-DCMAKE_CXX_COMPILER=${workspaceFolder}/../external/kokkos/bin/nvcc_wrapper -DKokkos_ENABLE_CUDA=ON -DKokkos_ARCH_TURING75=ON ..", //-DCMAKE_CXX_COMPILER=/home/ljl/Documents/MultiCom-add/euler_kokkos-add/external/kokkos/bin/nvcc_wrapper -DKokkos_ENABLE_CUDA=ON -DKokkos_ARCH_TURING75=ON 
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": [],
+			"detail": "CMake template build task",
+			"dependsOn": [
+				"rm"
+			]
+		},
+		{
+			"type": "shell",
+			"label": "install",
+			"command": "cd ${workspaceFolder}/../build/ && make -j",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": [],
+			"detail": "CMake template build task",
+			"dependsOn": [
+				"build"
+			]
+		},
+	]
+}

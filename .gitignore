@@ -1,8 +1,1 @@
-*.o
-*~
-compile_commands.json
-euler2d.omp
-euler2d.cuda
-_build
-build_*
-.ccls-cache
+/build

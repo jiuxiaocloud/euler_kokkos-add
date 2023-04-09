@@ -25,14 +25,14 @@ include(initBuildType)
 option (BUILD_CODE "Enable / disable project build" ON)
 option (BUILD_DOC  "Enable / disable documentation build (sphinx/html)" OFF)
 option (USE_SPHINX_EXHALE "Enable / disable building API documentation (very long)" OFF)
-option (USE_MPI "Activate / want MPI build" OFF)
+option(USE_MPI "Activate / want MPI build" OFF)
 option (USE_VTK "Activate / want VTK build" OFF)
 option (USE_DOUBLE "build with double precision" ON)
 option (USE_HDF5 "build HDF5 input/output support" OFF)
 option (USE_PNETCDF "build PNETCDF input/output support (MPI required)" OFF)
 option (USE_FPE_DEBUG "build with floating point Nan tracing (signal handler)" OFF)
 option (USE_MPI_CUDA_AWARE_ENFORCED "Some MPI cuda-aware implementation are not well detected; use this to enforce" OFF)
-
+#option (Kokkos_ENABLE_CUDA "build with Cuda"  ON)
 # Documentation type
 if(NOT DEFINED DOC)
   set(DOC OFF CACHE STRING
